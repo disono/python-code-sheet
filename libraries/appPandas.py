@@ -27,3 +27,12 @@ print(df)
 # drop column
 df.drop('Z', axis = 1, inplace = True)
 print(df)
+# accessing dataframes
+print(df['Y'])
+print(df.loc['a'])
+print(df.iloc[1])
+print(df.loc['a', 'Y'])
+# conditional
+print(df[df['W'] > 3]['W'])
+print(df[(df['W'] > 3) & (df['Y'] > 3)])
+print(df[(df['W'] > 3) | (df['Y'] > 1)])
