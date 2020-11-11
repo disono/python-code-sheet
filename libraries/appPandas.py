@@ -71,3 +71,22 @@ df1 = pd.DataFrame(x1, index = [1,2,3,4,5])
 df2 = pd.DataFrame(x2, index = [1,2,3,4,5])
 df3 = pd.DataFrame(x3, index = [6,7,8,9,10])
 print(pd.concat([df1,df2,df3], axis = 0))
+# merging
+print('*********** Merging ***********')
+df1 = pd.DataFrame({'d': [1, 2, 3], 'a': [1, 2, 3], 'key1': [5, 6, 7]})
+df2 = pd.DataFrame({'d': [1, 2, 3], 'c': [1, 9, 2], 'key1': [15, 16, 17]})
+print(pd.merge(df1, df2, how = 'outer', on = 'key1'))
+# Operators
+print('*********** Operators ***********')
+x = pd.DataFrame({'a': [1, 2, 3, 4, 5], 'b': [30, 70, 30, 40 ,50]})
+print(x.index)
+print(x.sum)
+def inc(x):
+    x = x + 100
+    return x
+print(x.apply(inc))
+print(x.sort_values('b'))
+print(x['b'].unique())
+print(x.nunique())
+print(x['b'].value_counts())
+print(x['b'].isnull())
